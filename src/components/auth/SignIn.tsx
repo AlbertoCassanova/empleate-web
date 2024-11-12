@@ -13,11 +13,17 @@ function SignIn() {
             <form method="POST">
                 <div className="mb-4 bg-sky-100">
                     <label className="block text-gray-600">Correo Electrónico</label>
-                    <input type="text" id="username" name="username" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autoComplete="off" />
+                    <input type="text" id="username" name="username" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autoComplete="off" 
+                        value={fields.email}
+                        onChange={handleFieldChange}
+                    />
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-800">Contraseña</label>
-                    <input type="password" id="password" name="password" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autoComplete="off" />
+                    <input type="password" id="password" name="password" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autoComplete="off"
+                        value={fields.password}
+                        onChange={handleFieldChange}
+                    />
                 </div>
                 <div className="mb-4 flex items-center">
                     <input type="checkbox" id="remember" name="remember" className="text-red-500" />
