@@ -24,8 +24,7 @@ const SignUp: FC<AuthViewSetterType> = ({ setAuthView }): JSX.Element => {
                     email,
                     password,
                 });
-                console.log(data.user.id);
-                console.log(error);
+                    
                 if (data) {
                     await supabase.from('profiles').insert([
                         {
@@ -34,8 +33,12 @@ const SignUp: FC<AuthViewSetterType> = ({ setAuthView }): JSX.Element => {
                             id: data.user.id
                         }
                     ])
+                    
                     alert("Se ha creado el usuario, revise su correo para confirmar");
                     setAuthView('signIn');
+                }
+                if (error) {
+                    console.log(error);
                 }
             }
         }
